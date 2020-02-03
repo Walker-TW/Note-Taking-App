@@ -13,3 +13,4 @@ I want to be able to create a new note, in order to remind myself of information
 As a developer 
 I want to see the full note displayed on click (pop up most likley)
 so i can see all the information in the note. # note_makers
+# note_makers
