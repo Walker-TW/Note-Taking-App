@@ -42,4 +42,14 @@
   }
   testInsertNote()
 
+  function testloadHTML() {
+    var notebook = new Notebook("Show me some stuff")
+    notebook.save()
+    notebook.insertNote("Second Note")
+    assert.isTrue(notebook.loadHTML() === "<ul><li><div>Show me some stuff</div></li><li><div>Second Note</div></li></ul>")
+    // map all list together with <li><div>thing</li></div> the join() back into an array then add in <ul>+array+</ul>
+
+  }
+  testloadHTML()
+
 })(this);

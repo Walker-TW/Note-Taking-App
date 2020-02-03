@@ -10,7 +10,5 @@
   Notebook.prototype.save = function(){ this.storage.push(this.note)}
   Notebook.prototype.insertNote = function(string){ this.storage.push(string) }
 
-
-  // Notebook.prototype.save = function(){ this.storage.push(this.note)}
   exports.Notebook = Notebook; 
  })(this); 
