@@ -7,4 +7,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.use(express.static('lib'));
+
+console.log("Listening on localhost:8080")
 app.listen(8080);
