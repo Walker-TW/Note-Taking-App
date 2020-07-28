@@ -2,7 +2,7 @@ describe(`NoteListView`, function() {
     var NoteListView = require('../lib/NoteListView.js')
     var Note = require('../lib/Note.js')
     var NoteList = require('../lib/NoteListModel.js')
-    var note1, note2, note3, notelist, notelistview
+    var note1, note2, note3, notelist, notelistview, blanknotelistview
 
     beforeEach(function() {
         note1 = new Note("This is the First Note")
@@ -13,6 +13,8 @@ describe(`NoteListView`, function() {
         notelist.addNote('Second')
         notelist.addNote('Third')
         notelistview = new NoteListView(notelist)
+        blanknotelistview = new NoteListView()
+
     })
 
     it('will institate with a NoteListModel as an argument', function(){
@@ -27,6 +29,10 @@ describe(`NoteListView`, function() {
         expect(notelistview.htmlify()).toEqual('<li><div>First</div></li><li><div>Second</div></li><li><div>Third</div></li>')
     })
 
+    it(`will accept a note list model without a note`,function(){
+        expect(blanknotelistview.htmlify()).toEqual(``)
+    })
+
     it('will add a given html string to every argument passed to it', function(){
         var onenotelist = new NoteList()
         onenotelist.addNote('This is the First Note')
@@ -35,7 +41,6 @@ describe(`NoteListView`, function() {
     })
 
     it('will instantiate without an argument passed to it', function(){
-       var blanknotelistview = new NoteListView()
        expect(blanknotelistview.notelistmodel).toEqual(undefined)
     })
 
